@@ -18,6 +18,12 @@ public class BaseException extends RuntimeException{
 		this.args = args;
 	}
 	
+	public BaseException(HttpError httpError) {
+		super();
+		this.httpError = httpError;
+		this.args = null;
+	}
+	
 	public HttpError getHttpError() {
 		return httpError;
 	}

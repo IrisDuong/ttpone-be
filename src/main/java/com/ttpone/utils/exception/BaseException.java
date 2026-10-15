@@ -1,6 +1,6 @@
 package com.ttpone.utils.exception;
 
-import com.ttpone.utils.enums.HttpError;
+import com.ttpone.utils.enums.error_code.HttpError;
 
 public class BaseException extends RuntimeException{
 
@@ -12,10 +12,16 @@ public class BaseException extends RuntimeException{
 	private final HttpError httpError;
 	private final Object[] args;
 	
-	public BaseException(HttpError httpError, Object[] args) {
+	public BaseException(HttpError httpError, Object... args) {
 		super();
 		this.httpError = httpError;
 		this.args = args;
+	}
+	
+	public BaseException(HttpError httpError) {
+		super();
+		this.httpError = httpError;
+		this.args = null;
 	}
 	
 	public HttpError getHttpError() {
